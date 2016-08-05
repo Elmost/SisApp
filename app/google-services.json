@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "989343107121",
+    "firebase_url": "https://sisapp-c2fd3.firebaseio.com",
+    "project_id": "sisapp-c2fd3",
+    "storage_bucket": "sisapp-c2fd3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:989343107121:android:3cbc8098351fab41",
+        "android_client_info": {
+          "package_name": "com.sisapp.sisapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "989343107121-3tn05edgv29s2jh5e7tl37fjiq9d806i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sisapp.sisapp",
+            "certificate_hash": "CDCC6003AB523E64E7163A0AD7CAFD952E07A4F1"
+          }
+        },
+        {
+          "client_id": "989343107121-rp04ble846pg7igagrsgmjr3aec81tsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLzy5cnK2u_XLvCmTCBZs-yxxzErM41ZA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
