@@ -17,6 +17,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+
+
     }
     buildTypes {
         release {
@@ -43,5 +45,6 @@ dependencies {
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+    compile "com.googlecode.libphonenumber:libphonenumber:$rootProject.ext.libphonenumber"
 }
 apply plugin: 'com.google.gms.google-services'

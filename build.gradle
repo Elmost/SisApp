@@ -36,4 +36,5 @@ ext {
     butterknifeVersion = '7.0.1'
     eventbusVersion = '3.0.0'
     glideVersion = '3.6.1'
+    libphonenumber = '7.5.1'
 }
