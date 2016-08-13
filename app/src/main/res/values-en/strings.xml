@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SisApp</string>
+    <string name="activity.main.title">Main</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="login.error.message.signin">Unable to log %s</string>
+    <string name="login.message.signin">Log in</string>
+    <string name="login.message.signin.google.error">An error occurred while login with Google, check your Google account.</string>
+    <string name="login.message.signin.sisapp.error">An error occurred when logging on SisApp, check their credentials.</string>
+    <string name="login.message.signup">Create Account</string>
+    <string name="login.message.signup.sisapp.error">An error occurred when registering, please try again.</string>
+    <string name="login.txt.email">Email *</string>
+    <string name="login.txt.password">Password *</string>
+    <string name="main.menu.title.action.logout">Log out</string>
+</resources>

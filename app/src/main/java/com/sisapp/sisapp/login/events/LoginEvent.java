@@ -1,65 +1,60 @@
 package com.sisapp.sisapp.login.events;
 
 /**
+ * Eventos relacionados en el login.
+ * <p>
  * Created by Elmost on 5/08/2016.
  */
 public class LoginEvent {
 
-    /**
-     * Inicio de sesión con SisApp.
-     */
+    // Código constante de error al iniciar sesión con usuario de SisApp.
     public final static int onSignInSisAppError = 101;
+    // Mensaje constante de error al iniciar sesión con usuario de SisApp.
+    public final static String showMessageSignInSisAppError = "Ocurrió un error al iniciar sesion en SisApp, por favor verifique sus credenciales.";
+
+    // Código constante de éxito al iniciar sesión con usuario de SisApp.
     public final static int onSignInSisAppSuccess = 102;
 
-    /**
-     * Inicio de sesión con Google.
-     */
+    // Código constante de inicio de sesión con Google.
+    public final static int onSignInGoogle = 200;
+    // Código constante de error al iniciar sesión con usuario de Google.
     public final static int onSignInGoogleError = 201;
+    // Mensaje constante de error al iniciar sesión con usuario de Google.
+    public final static String showMessageSignInGoogle = "Ocurrió un error al iniciar sesion con Google, por favor verifique su cuenta de Google.";
+    // Código constante de éxito al iniciar sesión con usuario de Google.
     public final static int onSignInGoogleSuccess = 202;
 
-    /**
-     * Crear cuenta de usuario en SisApp.
-     */
-    public final static int onCreateUserSisAppError = 301;
-    public final static int onCreateUserSisAppSuccess = 302;
+    // Código constante de error al registrarse en SisApp.
+    public final static int onSignUpSisAppError = 301;
+    // Mensaje constante de error al iniciar sesión con usuario de Google.
+    public final static String showMessageSignUpSisAppError = "Ocurrió un error al registrarse, por favor intentelo de nuevo.";
+    // Código constante de éxito al registrarse en SisApp.
+    public final static int onSignUpSisAppSuccess = 302;
 
-    /**
-     * Recuperar sesión de usuario en SisApp.
-     */
-    public final static int onFailedToRecoverSessionSisApp = 401;
-    public final static int onSuccessToRecoverSessionSisApp = 402;
-
-    /**
-     * Recuperar sesión de usuario en Google.
-     */
-    public final static int onFailedToRecoverSessionGoogle = 501;
-    public final static int onSuccessToRecoverSessionGoogle = 502;
-
-    /**
-     * Opcionales.
-     */
-    public final static int onSignInError = 0;
-    public final static int onSignUpError = 1;
-    public final static int onSignInSuccess = 2;
-    public final static int onSignUpSuccess = 3;
-    public final static int onFailedToRecoverSession = 4;
+    // Código constante de falla al intentar recuperar la sesión del usuario
+    public final static int onFailedToRecoverSession = 401;
+    // Mensaje constante de fallo de recuperación de sesión.l
+    public final static String showMessageFailedToRecoverSession = "Por favor, iniciar sesión";
 
     private int eventType;
-    private String errorMesage;
+    private String message;
 
-    public int getEventType() {
+    public LoginEvent() {
+    }
+
+    public final int getEventType() {
         return eventType;
     }
 
-    public void setEventType(int eventType) {
+    public void setEventType(final int eventType) {
         this.eventType = eventType;
     }
 
-    public String getErrorMesage() {
-        return errorMesage;
+    public final String getMessage() {
+        return message;
     }
 
-    public void setErrorMesage(String errorMesage) {
-        this.errorMesage = errorMesage;
+    public void setMessage(final String message) {
+        this.message = message;
     }
 }

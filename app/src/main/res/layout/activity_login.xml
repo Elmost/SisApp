@@ -1,113 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".login.views.LoginActivity">
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/loginOutputLogo"
-        android:layout_width="144dp"
-        android:layout_height="144dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/ic_launcher_sisapp_none" />
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/loginWrapperEmail"
+    <ScrollView
+        android:id="@+id/loginScroll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginOutputLogo"
-        android:padding="@dimen/activity_vertical_margin">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/loginInputEmail"
+        <RelativeLayout
+            android:id="@+id/loginContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_mail_outline_24dp"
-            android:hint="@string/login.txt.email"
-            android:inputType="textEmailAddress" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="wrap_content">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/loginWrapperPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginWrapperEmail"
-        android:padding="@dimen/activity_vertical_margin">
+            <ImageView
+                android:id="@+id/loginOutputLogo"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_launcher_sisapp_none" />
 
-        <EditText
-            android:id="@+id/loginInputPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_vpn_key_24dp"
-            android:hint="@string/login.txt.password"
-            android:inputType="textPassword" />
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/loginWrapperEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginOutputLogo"
+                android:padding="@dimen/activity_vertical_margin">
 
-    <LinearLayout
-        android:id="@+id/loginLayoutButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginWrapperPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_margin="@dimen/activity_vertical_margin">
+                <EditText
+                    android:id="@+id/loginInputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_mail_outline_24dp"
+                    android:hint="@string/login.txt.email"
+                    android:inputType="textEmailAddress" />
+            </android.support.design.widget.TextInputLayout>
 
-        <Button
-            android:id="@+id/loginBtnSignIn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimario"
-            android:elevation="10dp"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:shadowColor="@color/colorPrimarioOscuro"
-            android:text="@string/login.message.signin"
-            android:textColor="@color/colorPrimarioOscuro" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginWrapperEmail"
+                android:layout_centerInParent="true"
+                android:elevation="20dp"
+                android:visibility="gone" />
 
-        <Button
-            android:id="@+id/loginBtnSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/colorPrimarioOscuro"
-            android:elevation="10dp"
-            android:padding="@dimen/activity_horizontal_margin"
-            android:shadowColor="@color/colorPrimario"
-            android:text="@string/login.message.signup"
-            android:textColor="@color/colorPrimario" />
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/loginWrapperPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginWrapperEmail"
+                android:padding="@dimen/activity_vertical_margin">
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/loginInputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_vpn_key_24dp"
+                    android:hint="@string/login.txt.password"
+                    android:inputType="textPassword" />
+            </android.support.design.widget.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/loginLayoutAuthFederated"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginLayoutButtons"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/activity_vertical_margin"
-        android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/loginLayoutButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginWrapperPassword"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/activity_vertical_margin">
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/loginSignInGoogle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp" />
-    </LinearLayout>
+                <Button
+                    android:id="@+id/loginBtnSignInSisApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorPrimario"
+                    android:elevation="10dp"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:shadowColor="@color/colorPrimarioOscuro"
+                    android:text="@string/login.message.signin"
+                    android:textColor="@color/colorPrimarioOscuro" />
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/loginBannerAdsBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+                <Button
+                    android:id="@+id/loginBtnSignUpSisApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorPrimarioOscuro"
+                    android:elevation="10dp"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:shadowColor="@color/colorPrimario"
+                    android:text="@string/login.message.signup"
+                    android:textColor="@color/colorPrimario" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loginLayoutAuthFederated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginLayoutButtons"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:orientation="vertical">
+
+                <com.google.android.gms.common.SignInButton
+                    android:id="@+id/loginBtnSignInGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/loginLayoutBanner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginLayoutAuthFederated"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/loginBannerAdsBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>
+
+            </LinearLayout>
 
 
-</RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

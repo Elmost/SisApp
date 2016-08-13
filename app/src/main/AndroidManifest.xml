@@ -5,15 +5,33 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".app.SisAppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_sisapp_circle"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
 
         <activity
-            android:name=".login.views.LoginActivity"
+            android:name=".GoogleSignInActivity"
+            android:label="@string/label_google_sign_in">
+
+        </activity>
+
+        <activity
+            android:name=".loader.viewa.LoaderActivityImpl"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".main.views.MainActivityImpl"
+            android:label="@string/activity.main.title"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".login.views.LoginActivityImpl"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".LoaderActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-
-        <activity
-            android:name=".SignInGoogleActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
 
     </application>
 

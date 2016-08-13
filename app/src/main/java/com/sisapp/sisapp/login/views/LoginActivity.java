@@ -1,76 +1,62 @@
 package com.sisapp.sisapp.login.views;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.sisapp.sisapp.R;
+import com.sisapp.sisapp.login.views.LoginActivityImpl;
 
 /**
- * Created by Elmost on 4/08/2016.
+ * Interface {@link LoginActivityImpl}
+ * Created by Elmost on 5/08/2016.
  */
-public class LoginActivity extends AppCompatActivity implements LoginViewInterface {
+public interface LoginActivity {
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+    Boolean ENABLE = true;
+    Boolean DISABLE = false;
 
-        AdView mAdView = (AdView) findViewById(R.id.loginBannerAdsBottom);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
-    }
+    /**
+     * Habilitar de entradas.
+     */
+    void enableInputs();
+
+    /**
+     * Desactivar las entradas.
+     */
+    void disableInputs();
+
+    /**
+     * Mostrar barra de progreso.
+     */
+    void showProgress();
+
+    /**
+     * Ocultar barra de progreso.
+     */
+    void hideProgress();
+
+    /**
+     * Encargarse del registro en SisApp.
+     */
+    void handleSignUpSisApp();
+
+    /**
+     * Encargarce del inicio de sesión en SisApp.
+     */
+    void handleSignInSisApp();
+
+    /**
+     * Encargarce del inicio de sesión con google.
+     */
+    void handleSignInGoogle();
+
+    /**
+     * en caso de error.
+     *
+     * @param error
+     */
+    void onError(String error);
+
+    /**
+     * en caso de éxito.
+     */
+    void onSucces();
 
 
-    @Override
-    public void enableInputs() {
-
-    }
-
-    @Override
-    public void disableInputs() {
-
-    }
-
-    @Override
-    public void showProgress() {
-
-    }
-
-    @Override
-    public void hideProgress() {
-
-    }
-
-    @Override
-    public void handleSignUp() {
-
-    }
-
-    @Override
-    public void handleSignIn() {
-
-    }
-
-    @Override
-    public void handleSignInGoogle() {
-
-    }
-
-    @Override
-    public void goToMainScreen() {
-
-    }
-
-    @Override
-    public void handleErrors(String error) {
-
-    }
-
-    @Override
-    public void handleSuccess() {
-
-    }
 }
